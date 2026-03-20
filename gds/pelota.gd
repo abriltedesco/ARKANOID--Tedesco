@@ -8,14 +8,23 @@ var vidas = 3
 signal vidasPerdidas
 signal vidaRestada
 
+var vida_restada = false
+
 func _ready() -> void:
 	velocity = Vector2(veloc* -1, veloc)
 	
-func restarVida() -> void:	
+func restarVida() -> void:
+	if vida_restada:
+		return
+ 
+	vida_restada = true
+	activa = false
 	vidas -= 1
-	vidaRestada.emit()
-	if vidas == 0:
+ 
+	if vidas <= 0:
 		vidasPerdidas.emit()
+	else:
+		vidaRestada.emit()
 	
 func _physics_process(delta: float) -> void:
 	if activa:
@@ -23,6 +32,7 @@ func _physics_process(delta: float) -> void:
 		if collision:
 			if collision.get_collider().name == "piso":
 				restarVida()
+				return
 			
 			velocity = velocity.bounce(collision.get_normal())
 			if collision.get_collider().has_method("hit"):
@@ -32,4 +42,5 @@ func _physics_process(delta: float) -> void:
 			velocity.y = -200; 
 		if (velocity.x == 0):
 			velocity.y = -200;
-			
+	else:
+		return

@@ -1,5 +1,5 @@
 extends StaticBody2D
- 
+
 func hit():
 	$Sprite2D.visible = false
 	$CollisionShape2D.set_deferred("disabled", true)

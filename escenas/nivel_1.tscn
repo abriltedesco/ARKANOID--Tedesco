@@ -67,3 +67,4 @@ position = Vector2(568, 568)
 position = Vector2(568, 528)
 
 [connection signal="vidaRestada" from="pelota" to="." method="_on_pelota_vida_restada"]
+[connection signal="vidasPerdidas" from="pelota" to="." method="_on_pelota_vidas_perdidas"]
