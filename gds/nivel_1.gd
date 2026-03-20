@@ -50,3 +50,5 @@ func _on_pelota_vida_restada() -> void:
 
 func _on_pelota_vidas_perdidas() -> void:
 	print("perdiste todas tus vidas")
+	await get_tree().create_timer(1.5).timeout 
+	await get_tree().change_scene_to_file("res://escenas/menu.tscn") 

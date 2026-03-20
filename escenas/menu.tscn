@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bhj478gr54ee5"]
 
 [ext_resource type="Texture2D" uid="uid://c5jujvl5x2fqx" path="res://assets/fonoMenu.jpg" id="1_lti8b"]
-[ext_resource type="Script" uid="uid://c2s027nlw25fc" path="res://menu.gd" id="1_ouk20"]
+[ext_resource type="Script" uid="uid://c2s027nlw25fc" path="res://gds/menu.gd" id="1_ouk20"]
 
 [node name="menu" type="Control" unique_id=493814564]
 layout_mode = 3
@@ -43,18 +43,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 alignment = 1
-metadata/_edit_group_ = true
 
-[node name="btnJ" type="Button" parent="VBoxContainer" unique_id=964430901]
+[node name="btnJugar" type="Button" parent="VBoxContainer" unique_id=964430901]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "JUGAR"
 
-[node name="btnS" type="Button" parent="VBoxContainer" unique_id=1870351139]
+[node name="btnSalir" type="Button" parent="VBoxContainer" unique_id=1870351139]
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 30
 text = "SALIR"
 
-[connection signal="pressed" from="VBoxContainer/btnJ" to="." method="_on_btn_j_pressed"]
-[connection signal="pressed" from="VBoxContainer/btnS" to="." method="_on_btn_s_pressed"]
+[connection signal="pressed" from="VBoxContainer/btnJugar" to="." method="_on_btn_j_pressed"]
+[connection signal="pressed" from="VBoxContainer/btnSalir" to="." method="_on_btn_s_pressed"]

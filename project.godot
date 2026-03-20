@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="arkanoid-tedesco"
-run/main_scene="res://escenas/nivel_1.tscn"
+run/main_scene="uid://bhj478gr54ee5"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [physics]
