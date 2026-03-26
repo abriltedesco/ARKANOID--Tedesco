@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dmw5upqencf1a" path="res://gds/nivel_1.gd" id="1_43uub"]
 [ext_resource type="PackedScene" uid="uid://btjwwo6m6a16o" path="res://escenas/paleta.tscn" id="1_io84i"]
+[ext_resource type="Texture2D" uid="uid://dynx5mq0nwb72" path="res://assets/fondo.jpg" id="2_43uub"]
 [ext_resource type="PackedScene" uid="uid://bshuarc25h3nj" path="res://escenas/pelota.tscn" id="2_oh5vl"]
+[ext_resource type="Script" uid="uid://dxdl1rc07uarx" path="res://escenas/line_2d.gd" id="3_ylyhu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rgjns"]
 size = Vector2(1167, 18)
@@ -19,6 +21,11 @@ size = Vector2(1169, 50)
 [node name="nivel1" type="Node2D" unique_id=2080461798]
 script = ExtResource("1_43uub")
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=265366170]
+offset_right = 1160.0
+offset_bottom = 787.0
+texture = ExtResource("2_43uub")
+
 [node name="paredes" type="Node2D" parent="." unique_id=567164613]
 
 [node name="techo" type="StaticBody2D" parent="paredes" unique_id=320081810]
@@ -31,6 +38,7 @@ shape = SubResource("RectangleShape2D_rgjns")
 position = Vector2(0, -2)
 points = PackedVector2Array(0, 0, 1152, 0)
 width = 20.0
+script = ExtResource("3_ylyhu")
 
 [node name="paredDer" type="StaticBody2D" parent="paredes" unique_id=142406672]
 
@@ -40,8 +48,9 @@ shape = SubResource("RectangleShape2D_43uub")
 
 [node name="Line2D" type="Line2D" parent="paredes/paredDer" unique_id=1494527978]
 position = Vector2(-2, 0)
-points = PackedVector2Array(0, 648, 0, 0)
+points = PackedVector2Array(0, 648, 0, 266.79892, 0, 0)
 width = 20.0
+script = ExtResource("3_ylyhu")
 
 [node name="paredIzq" type="StaticBody2D" parent="paredes" unique_id=1357922985]
 
@@ -53,6 +62,7 @@ shape = SubResource("RectangleShape2D_ylyhu")
 position = Vector2(2, 0)
 points = PackedVector2Array(1152, 0, 1152, 648)
 width = 20.0
+script = ExtResource("3_ylyhu")
 
 [node name="piso" type="StaticBody2D" parent="paredes" unique_id=403678727]
 
