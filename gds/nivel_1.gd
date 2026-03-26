@@ -22,11 +22,11 @@ func _ready() -> void:
 func generar_grilla() -> void:
 	var ancho_total = cols * ancho + (cols - 1) * sepX 
 	var origen_x = (1152 - ancho_total) / 2.0 + ancho / 2.0 
-	var inicio_y := margenTecho + alto / 2.0
+	var inicio_y = margenTecho + alto / 2.0
 
 	for fila in filas:
 		for col in cols:
-			var ladrillo := ladrilloObj.instantiate()
+			var ladrillo = ladrilloObj.instantiate()
 			add_child(ladrillo)
 
 			# global_position para ignorar transformación del nodo padre (y q se quede en su pos en juego)

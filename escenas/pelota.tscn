@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cpcyns1sxa00d" path="res://gds/pelota.gd" id="1_cuejr"]
 [ext_resource type="Texture2D" uid="uid://tckvtyadtmp6" path="res://assets/ball.png" id="1_se23l"]
+[ext_resource type="AudioStream" uid="uid://f8nt23wsvxnu" path="res://assets/sonidos/kickball.mp3" id="3_jyjv2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cuejr"]
 radius = 12.165525
@@ -18,4 +19,6 @@ texture = ExtResource("1_se23l")
 rotation = 0.0012271489
 shape = SubResource("CircleShape2D_cuejr")
 
-[connection signal="vidaPerdida" from="." to="." method="_on_vida_perdida"]
+[node name="sonidoGolpe" type="AudioStreamPlayer2D" parent="." unique_id=1150595850]
+stream = ExtResource("3_jyjv2")
+volume_db = 10.0

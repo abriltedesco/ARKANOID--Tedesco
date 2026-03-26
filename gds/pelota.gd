@@ -36,6 +36,7 @@ func _physics_process(delta: float) -> void:
 			
 			velocity = velocity.bounce(collision.get_normal())
 			if collision.get_collider().has_method("hit"):
+				$sonidoGolpe.playing = true
 				collision.get_collider().hit()
 			
 		if (velocity.y > 0 and velocity.y < 100):
