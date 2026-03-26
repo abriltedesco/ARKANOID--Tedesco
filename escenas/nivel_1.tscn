@@ -127,5 +127,23 @@ horizontal_alignment = 1
 vertical_alignment = 1
 max_lines_visible = 1
 
+[node name="cartelGanaste" type="CanvasLayer" parent="." unique_id=833296943]
+
+[node name="Label" type="Label" parent="cartelGanaste" unique_id=8721623]
+offset_left = -22.0
+offset_top = -55.0
+offset_right = 1164.0
+offset_bottom = 700.0
+size_flags_horizontal = 4
+theme = SubResource("Theme_a1mr3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_a1mr3")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_61s06")
+text = "FELCIDADES, GANASTE !"
+horizontal_alignment = 1
+vertical_alignment = 1
+max_lines_visible = 1
+
 [connection signal="vidaRestada" from="pelota" to="." method="_on_pelota_vida_restada"]
 [connection signal="vidasPerdidas" from="pelota" to="." method="_on_pelota_vidas_perdidas"]

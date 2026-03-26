@@ -4,6 +4,7 @@ extends Node2D
 @onready var corazon2 = $vidas/contVidas/corazon2
 @onready var corazon3 = $vidas/contVidas/corazon3
 @onready var gameOverCartel = $cartelPerdiste/Label 
+@onready var ganasteCartel = $cartelGanaste/Label 
 
 const cols = 8
 const filas = 5
@@ -12,6 +13,8 @@ const alto = 32
 const sepX = 4
 const sepY = 6
 const margenTecho = 85
+
+var cantLadrillos : int
 
 var posInicialPelota: Vector2
 var velInicialPelota
@@ -22,6 +25,15 @@ func _ready() -> void:
 	posInicialPelota = $pelota.position
 	posInicialPaleta = $paleta.position	
 	gameOverCartel.visible = false
+	ganasteCartel.visible = false
+	cantLadrillos = cols * filas
+	
+func restar_ladrillo() -> void:
+	cantLadrillos -= 1
+	
+	if cantLadrillos <= 0:
+		ganasteCartel.visible = true
+		$pelota.activa = false
 		
 # calculo para q quede lindo y centrado la matriz de ladrillos por ancho y alto
 func generar_grilla() -> void:
