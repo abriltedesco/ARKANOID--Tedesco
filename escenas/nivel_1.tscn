@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dmw5upqencf1a" path="res://gds/nivel_1.gd" id="1_43uub"]
 [ext_resource type="PackedScene" uid="uid://btjwwo6m6a16o" path="res://escenas/paleta.tscn" id="1_io84i"]
 [ext_resource type="Texture2D" uid="uid://dynx5mq0nwb72" path="res://assets/fondo.jpg" id="2_43uub"]
+[ext_resource type="Texture2D" uid="uid://bdofl7331145p" path="res://assets/heart_16x16.png" id="2_jlx04"]
 [ext_resource type="PackedScene" uid="uid://bshuarc25h3nj" path="res://escenas/pelota.tscn" id="2_oh5vl"]
 [ext_resource type="Script" uid="uid://dxdl1rc07uarx" path="res://escenas/line_2d.gd" id="3_ylyhu"]
 
@@ -20,6 +21,29 @@ size = Vector2(1169, 50)
 
 [node name="nivel1" type="Node2D" unique_id=2080461798]
 script = ExtResource("1_43uub")
+
+[node name="vidas" type="CanvasLayer" parent="." unique_id=2125844451]
+
+[node name="contVidas" type="HBoxContainer" parent="vidas" unique_id=1196292321]
+offset_left = 49.0
+offset_top = 32.0
+offset_right = 324.0
+offset_bottom = 71.0
+
+[node name="corazon1" type="TextureRect" parent="vidas/contVidas" unique_id=448185421]
+layout_mode = 2
+texture = ExtResource("2_jlx04")
+expand_mode = 2
+
+[node name="corazon2" type="TextureRect" parent="vidas/contVidas" unique_id=1803882725]
+layout_mode = 2
+texture = ExtResource("2_jlx04")
+expand_mode = 2
+
+[node name="corazon3" type="TextureRect" parent="vidas/contVidas" unique_id=204579417]
+layout_mode = 2
+texture = ExtResource("2_jlx04")
+expand_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=265366170]
 offset_right = 1160.0

@@ -22,6 +22,7 @@ func restarVida() -> void:
 	vidas -= 1
  
 	if vidas <= 0:
+		$sonidoGameOver.playing = true
 		vidasPerdidas.emit()
 	else:
 		vidaRestada.emit()
