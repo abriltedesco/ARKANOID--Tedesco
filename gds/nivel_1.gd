@@ -3,6 +3,7 @@ extends Node2D
 @onready var corazon1 = $vidas/contVidas/corazon1
 @onready var corazon2 = $vidas/contVidas/corazon2
 @onready var corazon3 = $vidas/contVidas/corazon3
+@onready var gameOverCartel = $cartelPerdiste/Label 
 
 const cols = 8
 const filas = 5
@@ -20,6 +21,7 @@ func _ready() -> void:
 	generar_grilla()
 	posInicialPelota = $pelota.position
 	posInicialPaleta = $paleta.position	
+	gameOverCartel.visible = false
 		
 # calculo para q quede lindo y centrado la matriz de ladrillos por ancho y alto
 func generar_grilla() -> void:
@@ -59,6 +61,7 @@ func _on_pelota_vida_restada() -> void:
 func _on_pelota_vidas_perdidas() -> void:
 	print("perdiste todas tus vidas")
 	corazon1.visible = false
+	gameOverCartel.visible = true
 	
 	await get_tree().create_timer(3.5).timeout 
 	await get_tree().change_scene_to_file("res://escenas/menu.tscn") 

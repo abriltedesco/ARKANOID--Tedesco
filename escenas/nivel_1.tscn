@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bdofl7331145p" path="res://assets/heart_16x16.png" id="2_jlx04"]
 [ext_resource type="PackedScene" uid="uid://bshuarc25h3nj" path="res://escenas/pelota.tscn" id="2_oh5vl"]
 [ext_resource type="Script" uid="uid://dxdl1rc07uarx" path="res://escenas/line_2d.gd" id="3_ylyhu"]
+[ext_resource type="FontFile" uid="uid://dm4abdm50xswk" path="res://assets/font/Gameplay.ttf" id="7_a1mr3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rgjns"]
 size = Vector2(1167, 18)
@@ -18,6 +19,11 @@ size = Vector2(18, 706)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oh5vl"]
 size = Vector2(1169, 50)
+
+[sub_resource type="Theme" id="Theme_a1mr3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61s06"]
+bg_color = Color(0.107250005, 0.065, 0.26, 0.46666667)
 
 [node name="nivel1" type="Node2D" unique_id=2080461798]
 script = ExtResource("1_43uub")
@@ -46,9 +52,12 @@ texture = ExtResource("2_jlx04")
 expand_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=265366170]
-offset_right = 1160.0
-offset_bottom = 787.0
+offset_left = 3.0
+offset_top = -53.0
+offset_right = 1163.0
+offset_bottom = 734.0
 texture = ExtResource("2_43uub")
+metadata/_edit_lock_ = true
 
 [node name="paredes" type="Node2D" parent="." unique_id=567164613]
 
@@ -99,6 +108,24 @@ position = Vector2(568, 568)
 
 [node name="pelota" parent="." unique_id=1492646839 instance=ExtResource("2_oh5vl")]
 position = Vector2(568, 528)
+
+[node name="cartelPerdiste" type="CanvasLayer" parent="." unique_id=1203289942]
+
+[node name="Label" type="Label" parent="cartelPerdiste" unique_id=1397027092]
+offset_left = -22.0
+offset_top = -55.0
+offset_right = 1164.0
+offset_bottom = 700.0
+size_flags_horizontal = 4
+theme = SubResource("Theme_a1mr3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_a1mr3")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_61s06")
+text = "GAME OVER."
+horizontal_alignment = 1
+vertical_alignment = 1
+max_lines_visible = 1
 
 [connection signal="vidaRestada" from="pelota" to="." method="_on_pelota_vida_restada"]
 [connection signal="vidasPerdidas" from="pelota" to="." method="_on_pelota_vidas_perdidas"]
